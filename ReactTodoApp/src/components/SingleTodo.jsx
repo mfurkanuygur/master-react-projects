@@ -28,7 +28,7 @@ const SingleTodo = ({ todo, allTodos, setAllTodos, isDisable, setIsDisable }) =>
             const editTodoState = allTodos.find(i => i.id == todoId);
             editTodoState.isEdit = !editTodoState.isEdit
             console.log("first")
-            editTodoState.name = editTodoName
+            editTodoState.name = editTodoName.trim()
             setAllTodos([...allTodos])
             setIsDisable(!isDisable)
         }

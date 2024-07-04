@@ -8,7 +8,7 @@ const TodoForm = ({ allTodos, setAllTodos,isDisable }) => {
         if (inputRef.current.value.trim() !== "") {
             setAllTodos([{
                 id: self.crypto.randomUUID(),
-                name: inputRef.current.value,
+                name: inputRef.current.value.trim(),
                 isComplete: false,
                 isEdit: false
             }, ...allTodos]);
