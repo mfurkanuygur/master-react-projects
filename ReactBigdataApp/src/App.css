@@ -8,10 +8,12 @@
 
 body {
     background-color: #e1e7ef;
+
+}
+main{
     max-width: 1440px;
     margin: 0 auto;
 }
-
 .see-more-container {
     width: 100%;
     display: flex;
@@ -34,8 +36,8 @@ body {
 .desktop-header {
     display: block;
     width: 100%;
-    padding: 10px 0px;
-    border-bottom: 1px solid gray;
+    padding: 10px 50px;
+    background-color: #fff;
 }
 
 .desktop-nav {
@@ -44,6 +46,19 @@ body {
     justify-content: space-between;
 }
 
+form{
+    width: 25%;
+    border: 1px solid gray;
+    border-radius: 10px;
+
+}
+input{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
 .mobile-header {
     display: none;
     position: relative;
