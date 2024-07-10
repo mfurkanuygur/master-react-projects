@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 const DetailPage = ({ detailData }) => {
   return (
     <div className="detail-section">
-      <h1 className="detail-title">today weather</h1>
+      <h1 className="detail-title">today's weather</h1>
       {detailData &&
         <div className="detail-container">
           <div className="today-container">
