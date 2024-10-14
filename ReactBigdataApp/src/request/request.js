@@ -2,7 +2,7 @@ const URL = "https://us-east-2.aws.neurelo.com/rest/products"
 const APIKEY = "neurelo_9wKFBp874Z5xFw6ZCfvhXcbiu2z32e6f6VlioYXkSf62kyRdgtPcIVVIQZrNLN2lt0xFrVi8R4W0Xy0sclg2dhbS63EaSGBpyQYUofzj1bUbw7q0FF/9mYvN3YUNmUEtB1iGwfEjWr/K5sgaDeMd5KyERRttl/bRRXgi8KQx1oh9pBV84vf1v+3bsHh0KIhn_Y6O9Dhxjl+KWcfjNPEs4lUHwQ40wSrORa7vkCCb8rp4="
 
 export const getAllProducts = async (skip) => {
-    const url = URL + `?skip=${skip}&take=10`;
+    const url = URL + `?skip=${skip}&take=8`;
     const options = {
         method: 'GET',
         headers: {
