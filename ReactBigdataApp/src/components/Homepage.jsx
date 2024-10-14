@@ -5,38 +5,36 @@ import Loading from "./Loading"
 import RenderProduct from "./RenderProduct"
 
 const Homepage = () => {
-    const [products, setProducts] = useState()
-    const [count, setCount] = useState(10)
-
+    const [products, setProducts] = useState([])
+    const [skip, setSkip] = useState(0)
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
-        getAllProducts().then(data => {
-            setProducts(data)
+        setLoading(true)
+        getAllProducts(skip).then(data => {
+            setProducts([...products, ...data])
+            setLoading(false)
         })
-    }, [])
-
+    }, [skip])
 
     const handleClick = () => {
-        setCount(count + 10)
-        console.log(count)
+        setSkip(skip + 10)
     }
 
     return (
         <div className="homepage">
-            {/* <h1>All Products: {products?.length}</h1> */}
-
             {
-                products &&
-                <div className="container">
-                    {products?.slice(0, count).map(product => (
-                        <RenderProduct key={product.id} product={product} />
-                    ))}
+                products?.length > 0 &&
+                <div>
+                    <div className="container">
+                        {products?.map(product => (
+                            <RenderProduct key={product?.id} product={product} />
+                        ))}
+                    </div>
+                    <div className="see-more-container">
+                        {loading ? <Loading /> : <button className="see-more-button" onClick={handleClick}>See more</button>}
+                    </div>
                 </div>
                 || <Loading />
-            }
-            {
-                products &&
-
-                <div className="see-more-container"><button className="see-more-button" onClick={() => handleClick()}>see more</button></div>
             }
         </div>
     )
